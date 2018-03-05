@@ -44,9 +44,9 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 |
 | Because the webserver doesn't have a public map, the default map
 | for all the assets needs to be renamed to private_html, which
-| is used by the webserver and can't be changed easily.
+| is used by the webserver and can't be changed by the user.
  */
-$app->bind('public.path', function () {
+$app->bind('path.public', function () {
     return base_path().'/private_html';
 });
 
