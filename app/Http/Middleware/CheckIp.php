@@ -15,6 +15,13 @@ class CheckIp
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        $ips = ['127.0.0.1', '94.215.71.134', '217.123.218.198', '84.87.17.75', '82.73.166.233']; //Lokaal, Schutstal, Miguel, Arjen, Denise
+
+        if(in_array($request->ip(), $ips)) {
+            return $next($request);
+        }
+        else {
+            exit('No Permissions');
+        }
     }
 }

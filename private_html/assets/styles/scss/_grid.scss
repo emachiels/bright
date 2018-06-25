@@ -1,0 +1,25 @@
+.col-row {
+  margin-left: -16px;
+  clear: both;
+}
+
+.col {
+  float: left;
+  padding-left: 16px;
+  min-height: 1px;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @extend .col;
+    width: ($i / 12) * 100%;
+  }
+}
+
+@media screen and (max-width: 745px) {
+  @for $i from 1 through 12 {
+    .col-s-#{$i} {
+      width: ($i / 12) * 100% !important;
+    }
+  }
+}

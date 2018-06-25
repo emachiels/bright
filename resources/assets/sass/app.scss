@@ -1,14 +1,123 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i");
 
 // Variables
 @import "variables";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "forms";
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+* {
+  color: #ABABAB;
+  font: {
+    family: "Open Sans";
+    size: 13px;
+    weight: 400;
+  }
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #CC9925;
+}
+
+h1 {
+  color: #C2C4C1;
+  font: {
+    weight: 300;
+    size: 3rem;
+  }
+}
+
+h2 {
+  font: {
+    weight: 300;
+    size: 1.6rem;
+  }
+}
+
+h3 {
+  font: {
+    weight: 700;
+    size: 1.1rem;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+header {
+  margin-bottom: 100px;
+
+  .wrapper {
+    display: flex;
+    height: 100px;
+    align-items: center;
+  }
+  
+  .title {
+    color: #EEE;
+    margin-top: 13px;
+  }
+
+  .global-navigation {
+    margin-left: auto;
+  }
+}
+
+.navigation-list {
+  align-items: center;
+  list-style-type: none;
+  display: flex;
+  height: 30px;
+  margin-top: 15px;
+
+  .navigation-list-item {
+    margin-right: 30px;
+
+    a:not(.flat-button) {
+      font: {
+        weight: bold;
+      }
+      padding: 12px 0;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+
+    &.active {
+      border-bottom: solid 1px #C2C4C1;
+      a {
+        color: #C2C4C1;
+      }
+    }
+  }
+}
+
+.landing-section {
+  margin-top: 50px;
+  text-align: center;
+
+  h1 {
+    width: 500px;
+  }
+}
+
+.login-section {
+
+  .login-image {
+    background: url('../images/modules.png');
+    width: 553px;
+    height: 367px;
+    float: right;
+  }
 }

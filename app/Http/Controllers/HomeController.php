@@ -2,18 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     /**
+     * @var UserRepository $users;
+     */
+    private $users;
+
+    /**
+     * @var Request $request;
+     */
+    private $request;
+
+    /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param Request $request
+     * @param UserRepository $users
      */
-    public function __construct()
+    public function __construct(Request $request, UserRepository $users)
     {
-        $this->middleware('auth');
+        $this->request = $request;
+        $this->users = $users;
+
+        $this->middleware('auth', ['except' => 'index']);
     }
 
     /**
@@ -23,6 +38,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('frontend.home');
     }
 }

@@ -12,9 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('home');
 });
 
 Auth::routes();
 
+Route::post('/login/{username}/{password}', 'Auth\LoginController@appLogin');
+
+Route::get('/vision', 'PagesController@getVision')->name('vision');
+
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/givebright/{id}', 'PointController@getGiveBright')->name('bright.get');
+Route::post('/givebright/{id}', 'PointController@postGiveBright')->name('bright.give');
+Route::get('/users', 'UserController@listUsers')->name('users');
